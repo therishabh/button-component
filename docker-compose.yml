@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  self-service:
+    image: node:18
+    environment:
+      HTTPS_METHOD: noredirect
+      VIRTUAL_HOST: personal-account.dev-travel.com
+      VIRTUAL_PORT: 3000
+      PORT: 3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/user/src/app/
+    working_dir: /user/src/app/
+    hostname: personal-account
+    command: npm run dev
+
+networks:
+  default:
+    name: dev-travel.com
+    external: true

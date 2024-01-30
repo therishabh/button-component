@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './mixin.scss';
+
+@include font-face("Inter");
+
+body {
+  background: #F1F1F1;
+  font: 600 14px / 24px 'Inter';
+  letter-spacing: 0;
+}
+
+.body {
+	font: 600 14px / 24px 'Inter';
+}
+
+.layout {
+  height: 100vh;
+}
+
+.layout-ios {
+  height: -webkit-fill-available !important;
+}
+
+.h1, .h2, .h3 {
+  font-family: 'Inter';
+  font-weight: 700;
+  letter-spacing: -1%;
+}
+
+.h1 {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.h2 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.h3 {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.bodysmall {
+  font: 400 13px / 20px 'Inter';
+  letter-spacing: 0%;
+}
+
+.footnote {
+  font: 400 12px / 18px 'Inter';
+}
+
+.link { // .underline
+  text-decoration: underline;
+}
+
+.semibold { // .font-semibold
+  font-weight: 600;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.privacy-policy {
+
+	& ol {
+		list-style-type: none;
+		counter-reset: item;
+		margin: 0;
+		padding: 0;
+	}
+	
+	& li {
+		counter-increment: item;
+		margin-bottom: 0.6em;
+	}
+	
+	& li:before {
+		content: counters(item, ".") "..";
+	}
+	
+	& li li {
+		margin-top: 10px;
+	}
+	
+	& li li:before {
+		content: counters(item, ".") ". ";
+	}
+	
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #B6B8BC;
+	opacity: 0.6;
+	border-radius: 20px;
+}
